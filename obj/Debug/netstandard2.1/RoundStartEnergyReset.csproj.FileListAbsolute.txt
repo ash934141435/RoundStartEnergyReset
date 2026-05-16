@@ -1,0 +1,8 @@
+D:\repomod\RoundStartEnergyReset\obj\Debug\netstandard2.1\RoundStartEnergyReset.csproj.AssemblyReference.cache
+D:\repomod\RoundStartEnergyReset\obj\Debug\netstandard2.1\RoundStartEnergyReset.GeneratedMSBuildEditorConfig.editorconfig
+D:\repomod\RoundStartEnergyReset\obj\Debug\netstandard2.1\RoundStartEnergyReset.AssemblyInfoInputs.cache
+D:\repomod\RoundStartEnergyReset\obj\Debug\netstandard2.1\RoundStartEnergyReset.AssemblyInfo.cs
+D:\repomod\RoundStartEnergyReset\obj\Debug\netstandard2.1\RoundStartEnergyReset.csproj.CoreCompileInputs.cache
+D:\repomod\RoundStartEnergyReset\bin\Debug\netstandard2.1\RoundStartEnergyReset.deps.json
+D:\repomod\RoundStartEnergyReset\bin\Debug\netstandard2.1\RoundStartEnergyReset.dll
+D:\repomod\RoundStartEnergyReset\obj\Debug\netstandard2.1\RoundStartEnergyReset.dll

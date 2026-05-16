@@ -1,68 +1,32 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net4.8</TargetFramework>
-    <AssemblyName>RoundStartEnergyReset</AssemblyName>
-    <Product>RoundStart Energy Reset</Product>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>10</LangVersion>
+    <Nullable>enable</Nullable>
+    <Authors>SisyphusMods</Authors>
     <Version>1.0.0</Version>
-    <Authors>YourName</Authors>
-    <Description>每轮进入新地图时自动将所有玩家的能量晶体回满</Description>
-    <LangVersion>latest</LangVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>$(SolutionDir)plugins\</OutputPath>
   </PropertyGroup>
 
-  <!-- BepInEx 相关引用 -->
-  <ItemGroup>
-    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
-    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" PrivateAssets="all" />
-    <PackageReference Include="UnityEngine.Modules" Version="5.6.0" PrivateAssets="all" />
-  </ItemGroup>
-
-  <!-- 游戏程序集引用（需要指向游戏目录） -->
-  <!-- 使用前请将 GamePath 改为你的 R.E.P.O. 游戏安装路径 -->
+  <!-- Add Package Sources -->
   <PropertyGroup>
-    <GamePath>C:\Program Files (x86)\Steam\steamapps\common\REPO</GamePath>
+    <RestoreAdditionalProjectSources>
+      https://api.nuget.org/v3/index.json;
+      https://nuget.bepinex.dev/v3/index.json;
+      https://nuget.windows10ce.com/nuget/v3/index.json
+    </RestoreAdditionalProjectSources>
   </PropertyGroup>
 
+  <!-- Package References -->
   <ItemGroup>
-    <!-- BepInEx 核心引用 -->
-    <Reference Include="BepInEx.Core">
-      <HintPath>$(GamePath)\BepInEx\core\BepInEx.Core.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="BepInEx.Harmony">
-      <HintPath>$(GamePath)\BepInEx\core\BepInEx.Harmony.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="0Harmony">
-      <HintPath>$(GamePath)\BepInEx\core\0Harmony.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
+    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all"/>
+    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.1" PrivateAssets="all" IncludeAssets="build" />
+    <PackageReference Include="Linkoid.Repo.Plugin.Build" Version="*" PrivateAssets="all" />
     
-    <!-- Unity 引擎引用 -->
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>$(GamePath)\REPO_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="UnityEngine">
-      <HintPath>$(GamePath)\REPO_Data\Managed\UnityEngine.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    
-    <!-- 游戏主程序集 -->
-    <Reference Include="Assembly-CSharp">
-      <HintPath>$(GamePath)\REPO_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
+    <PackageReference Include="BepInEx.Core" Version="5.*" ExcludeAssets="runtime" />
+    <PackageReference Include="UnityEngine.Modules" Version="2022.3.62" IncludeAssets="compile" PrivateAssets="all"/>
+    <PackageReference Include="R.E.P.O.GameLibs.Steam" Version="*-*" PrivateAssets="all" />
   </ItemGroup>
-
-  <!-- 编译后自动复制到游戏目录 -->
-  <Target Name="CopyToPlugins" AfterTargets="Build">
-    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GamePath)\BepInEx\plugins\" />
-    <Message Text="已复制 $(TargetFileName) 到游戏 plugins 目录" Importance="high" />
-  </Target>
 
 </Project>
