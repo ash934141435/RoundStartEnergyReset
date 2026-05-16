@@ -1,0 +1,9 @@
+{
+  "name": "RoundStart_EnergyReset",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/yourname/RoundStartEnergyReset",
+  "description": "每轮进入新地图时自动将所有玩家的能量晶体回满（非无限能量，仅每轮重置）。支持单人及联机模式，房主安装即可全队生效。",
+  "dependencies": [
+    "BepInEx-BepInExPack-5.4.2100"
+  ]
+}
