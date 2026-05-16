@@ -5,8 +5,10 @@
     <LangVersion>10</LangVersion>
     <Nullable>enable</Nullable>
     <Authors>SisyphusMods</Authors>
-    <Version>1.0.0</Version>
+    <Version>1.3.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
   </PropertyGroup>
 
   <!-- Add Package Sources -->
